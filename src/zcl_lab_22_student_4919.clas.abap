@@ -1,0 +1,23 @@
+CLASS zcl_lab_22_student_4919 DEFINITION
+      INHERITING FROM zcl_lab_21_classroom_4919
+  PUBLIC
+*  FINAL
+  CREATE PuBLIC.
+
+  PUBLIC SECTION.
+
+  METHODS assign_student.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCL_LAB_22_STUDENT_4919 IMPLEMENTATION.
+
+
+  METHOD assign_student.
+   DATA(lo_classroom) = NEW zcl_lab_21_classroom_4919(  ).
+
+  ENDMETHOD.
+ENDCLASS.

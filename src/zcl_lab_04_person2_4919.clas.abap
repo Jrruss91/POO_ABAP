@@ -1,0 +1,29 @@
+CLASS zcl_lab_04_person2_4919 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS set_age IMPORTING i_age TYPE i.
+
+    METHODS get_age EXPORTING e_age TYPE i.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+
+    DATA: age TYPE i.
+ENDCLASS.
+
+
+
+CLASS ZCL_LAB_04_PERSON2_4919 IMPLEMENTATION.
+
+
+  METHOD get_age.
+    e_age = me->age.
+  ENDMETHOD.
+
+
+  METHOD set_age.
+    me->age = i_age.
+  ENDMETHOD.
+ENDCLASS.

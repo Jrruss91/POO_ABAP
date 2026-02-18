@@ -1,0 +1,25 @@
+CLASS zcl_lab_15_flight_price_4919 DEFINITION
+  PUBLIC
+*  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    DATA: mt_flights TYPE TABLE OF /dmo/flight.
+
+    METHODS add_price IMPORTING ms_flights TYPE /dmo/flight.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCL_LAB_15_FLIGHT_PRICE_4919 IMPLEMENTATION.
+
+
+  METHOD add_price.
+
+    APPEND ms_flights TO mt_flights.
+
+  ENDMETHOD.
+ENDCLASS.
