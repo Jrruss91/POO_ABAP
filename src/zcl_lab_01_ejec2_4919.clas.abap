@@ -18,33 +18,42 @@ CLASS zcl_lab_01_ejec2_4919 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-    DATA: lv_conn_id TYPE string.
 
-    DATA(lo_flights) = NEW zcl_lab_26_flights_4919(  ).
+    DATA(lo_logistic) = NEW zcl_lab_28_logistic_4919(  ).
 
-    lo_flights->set_comp( EXPORTING iv_conn_id = '0400' ).
+    out->write( lo_logistic->merchandise_output(  ) ).
+    out->write( lo_logistic->production_line(  ) ).
+    out->write( lo_logistic->input_products(  ) ).
 
-*    lo_flights->zif_01_lab_01_flight_4919~get_comp(
-*      IMPORTING
-*        ev_conn_id = lv_conn_id
-*    ).
 
-    out->write( |Connection ID: { lo_flights->zif_01_lab_01_flight_4919~conn_id }| ).
 
-    DATA(ls_names) = lo_flights->get_customer( iv_customer_id = '000091' ).
-
-*    lo_flights->zif_lab_02_customer_4919~get_customer(
-*      EXPORTING
-*        iv_customer_id = '000091'
-*      RECEIVING
-*        rs_names       = DATA(ls_names)
-*    ).
-
-    out->write( ls_names ).
-
-    DATA(ls_airports) = lo_flights->get_airports( EXPORTING iv_airport_id = 'HKG' ).
-
-    out->write( ls_airports ).
+*    DATA: lv_conn_id TYPE string.
+*
+*    DATA(lo_flights) = NEW zcl_lab_26_flights_4919(  ).
+*
+*    lo_flights->set_comp( EXPORTING iv_conn_id = '0400' ).
+*
+**    lo_flights->zif_01_lab_01_flight_4919~get_comp(
+**      IMPORTING
+**        ev_conn_id = lv_conn_id
+**    ).
+*
+*    out->write( |Connection ID: { lo_flights->zif_01_lab_01_flight_4919~conn_id }| ).
+*
+*    DATA(ls_names) = lo_flights->get_customer( iv_customer_id = '000091' ).
+*
+**    lo_flights->zif_lab_02_customer_4919~get_customer(
+**      EXPORTING
+**        iv_customer_id = '000091'
+**      RECEIVING
+**        rs_names       = DATA(ls_names)
+**    ).
+*
+*    out->write( ls_names ).
+*
+*    DATA(ls_airports) = lo_flights->get_airports( EXPORTING iv_airport_id = 'HKG' ).
+*
+*    out->write( ls_airports ).
 
 
 *
